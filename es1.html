@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="es1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="es1.js"></script>
+</head>
+<body ng-app="es1App">
+<div class="bg-wrapper">
+    <div class="center-justified es1-text">
+        <div class="all-content" ng-controller="questionController" >
+            <h2 ng-hide="isFinal" class="question">{{currentNode.question}}</h2>
+            <h2 ng-show="isFinal" class="question">Для восстановления кодировки необходимо выполнить следующее преобразование: <b>{{result}}</b></h2>
+
+            <div ng-hide="isFinal" class="answer-buttons">
+                <div class="answer-button" ng-repeat="answer in currentNode.answers" ng-click="handleButtonClick()">
+                    {{answer.answer}}
+                </div>
+            </div>
+            <div ng-show="isFinal" class="answer-buttons">
+                <div class="answer-button" >1</div>
+                <div class="answer-button" >2</div>
+                <div class="answer-button" >3</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
